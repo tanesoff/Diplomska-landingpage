@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FINKI AI Assistant — Интелигентен асистент за студенти</title>
+<meta name="description"
+      content="Chrome екстензија која им помага на студентите на ФИНКИ да добиваат инстант одговори за консултации, испити, контакти и студиски програми." />
+<meta property="og:title" content="FINKI AI Assistant" />
+<meta property="og:description"
+      content="An intelligent chatbot for FINKI students — instant answers on consultations, exams, contacts, and study programs." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23005281'/%3E%3Ctext x='50' y='65' text-anchor='middle' fill='white' font-family='system-ui' font-size='40' font-weight='bold'%3EФИ%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Top navigation with language toggle -->
+<nav class="topnav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-icon">ФИ</span>
+      <span class="brand-text">FINKI AI Assistant</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about" data-mk="Што е ова" data-en="About">Што е ова</a>
+      <a href="#features" data-mk="Можности" data-en="Features">Можности</a>
+      <a href="#install" data-mk="Инсталација" data-en="Install">Инсталација</a>
+      <a href="#tech" data-mk="Технологии" data-en="Tech">Технологии</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="mk" aria-pressed="true">МК</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1 data-mk="ФИНКИ AI Асистент"
+          data-en="FINKI AI Assistant">ФИНКИ AI Асистент</h1>
+      <p class="hero-tagline"
+         data-mk="Интелигентен чет-бот за студентите на ФИНКИ. Добивај инстант одговори за консултации, испити, контакти и студиски програми — директно во твојот прелистувач."
+         data-en="An intelligent chatbot for FINKI students. Get instant answers about consultations, exams, contacts, and study programs — directly inside your browser.">
+        Интелигентен чет-бот за студентите на ФИНКИ. Добивај инстант одговори за консултации, испити, контакти и студиски програми — директно во твојот прелистувач.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" id="downloadBtn"
+           href="https://github.com/tanesoff/Diplomska-frontend/releases/latest"
+           data-mk="Преземи екстензија"
+           data-en="Download extension">Преземи екстензија</a>
+        <a class="btn btn-secondary" href="#install"
+           data-mk="Како да го инсталирам?"
+           data-en="How do I install it?">Како да го инсталирам?</a>
+      </div>
+      <div class="hero-meta">
+        <span class="badge badge-ok">● Live</span>
+        <span class="muted"
+              data-mk="Бекендот работи на Azure App Service"
+              data-en="Backend running on Azure App Service">
+          Бекендот работи на Azure App Service
+        </span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="img/hero-chat.png"
+           alt="FINKI AI Assistant chat panel showing exam schedule answer" />
+    </div>
+  </div>
+</header>
+
+<!-- What is this? -->
+<section id="about" class="section section-light">
+  <div class="container">
+    <h2 data-mk="Што е ова?" data-en="What is this?">Што е ова?</h2>
+    <div class="grid-2">
+      <div>
+        <p data-mk="ФИНКИ AI Асистент е Google Chrome екстензија која се појавува автоматски кога ќе посетиш било која страница на ФИНКИ (finki.ukim.mk и сите подомени). Со едно кликнување на пловечкото копче во долниот десен агол, се отвора панел во кој можеш да поставуваш прашања на природен јазик."
+           data-en="FINKI AI Assistant is a Google Chrome extension that automatically appears when you visit any FINKI page (finki.ukim.mk and all subdomains). One click on the floating button in the bottom-right corner opens a panel where you can ask questions in natural language.">
+          ФИНКИ AI Асистент е Google Chrome екстензија која се појавува автоматски кога ќе посетиш било која страница на ФИНКИ (finki.ukim.mk и сите подомени). Со едно кликнување на пловечкото копче во долниот десен агол, се отвора панел во кој можеш да поставуваш прашања на природен јазик.
+        </p>
+        <p data-mk="Зад кулисите, прашањата се обработуваат со помош на Azure AI Foundry асистент кој пребарува во база на знаење направена од службените страници на ФИНКИ. Така, наместо да отвораш повеќе табови барајќи распоред на испити, термини за консултации или контакт-информации, целата ФИНКИ површина ти е достапна преку едно прашање."
+           data-en="Behind the scenes, questions are processed by an Azure AI Foundry assistant that searches a knowledge base built from official FINKI sources. Instead of opening multiple tabs to find an exam schedule, consultation slots, or contact information, the entire FINKI knowledge surface is accessible through one question.">
+          Зад кулисите, прашањата се обработуваат со помош на Azure AI Foundry асистент кој пребарува во база на знаење направена од службените страници на ФИНКИ. Така, наместо да отвораш повеќе табови барајќи распоред на испити, термини за консултации или контакт-информации, целата ФИНКИ површина ти е достапна преку едно прашање.
+        </p>
+      </div>
+      <div class="card-image">
+        <img src="img/welcome.png" alt="Welcome state of the chat panel" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="section">
+  <div class="container">
+    <h2 data-mk="Што можам да прашам?" data-en="What can I ask?">Што можам да прашам?</h2>
+    <p class="section-lede"
+       data-mk="Системот ги покрива четири категории на информации, собрани од различни службени извори на ФИНКИ:"
+       data-en="The system covers four categories of information, gathered from various official FINKI sources:">
+      Системот ги покрива четири категории на информации, собрани од различни службени извори на ФИНКИ:
+    </p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h3 data-mk="Консултации" data-en="Consultations">Консултации</h3>
+        <p data-mk="Кога професор X има консултации? Каде се одржуваат? Дали има online термин?"
+           data-en="When does professor X have consultations? Where are they held? Is there an online slot?">
+          Кога професор X има консултации? Каде се одржуваат? Дали има online термин?
+        </p>
+        <code class="example-q"
+              data-mk="Кога има консултации проф. Анастас Мишев?"
+              data-en="When does prof. Anastas Mishev have office hours?">
+          Кога има консултации проф. Анастас Мишев?
+        </code>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📝</div>
+        <h3 data-mk="Испити" data-en="Exams">Испити</h3>
+        <p data-mk="Распоред на втори парцијални испити, јунска сесија, со точно време и просторија."
+           data-en="Second-partial midterms, June final session — exact times and rooms.">
+          Распоред на втори парцијални испити, јунска сесија, со точно време и просторија.
+        </p>
+        <code class="example-q"
+              data-mk="Кога е јунскиот испит по Машинско учење?"
+              data-en="When is the June exam for Machine Learning?">
+          Кога е јунскиот испит по Машинско учење?
+        </code>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📞</div>
+        <h3 data-mk="Контакти" data-en="Contacts">Контакти</h3>
+        <p data-mk="Телефонски броеви на студентската служба, деканатот, e-mail адреси и работно време."
+           data-en="Phone numbers for the student affairs office, dean's office, e-mail addresses, and opening hours.">
+          Телефонски броеви на студентската служба, деканатот, e-mail адреси и работно време.
+        </p>
+        <code class="example-q"
+              data-mk="Кој е телефонскиот број на студентската служба?"
+              data-en="What is the student affairs office phone number?">
+          Кој е телефонскиот број на студентската служба?
+        </code>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎓</div>
+        <h3 data-mk="Студиски програми" data-en="Study programs">Студиски програми</h3>
+        <p data-mk="Структура на додипломски и магистерски програми, изборни предмети, ECTS, услови за упис."
+           data-en="Structure of undergraduate and master programs, electives, ECTS, enrollment requirements.">
+          Структура на додипломски и магистерски програми, изборни предмети, ECTS, услови за упис.
+        </p>
+        <code class="example-q"
+              data-mk="Кои се изборните предмети во магистерскиот за Софтверско инженерство?"
+              data-en="What electives are offered in the Software Engineering master's program?">
+          Кои се изборните предмети во магистерскиот за Софтверско инженерство?
+        </code>
+      </div>
+    </div>
+
+    <p class="section-note"
+       data-mk="Прашањата се поставуваат на македонски јазик. Системот одговара врз основа на службените содржини на finki.ukim.mk, courses.finki.ukim.mk, consultations.finki.ukim.mk, и SharePoint XLSX распоредите. Кога одговорот не е во базата, асистентот чесно признава „не знам“ наместо да измислува."
+       data-en="Questions are asked in Macedonian. The system answers based on official content from finki.ukim.mk, courses.finki.ukim.mk, consultations.finki.ukim.mk, and SharePoint XLSX schedules. When an answer is not in the knowledge base, the assistant honestly admits 'I don't know' rather than fabricating a response.">
+      Прашањата се поставуваат на македонски јазик. Системот одговара врз основа на службените содржини на finki.ukim.mk, courses.finki.ukim.mk, consultations.finki.ukim.mk, и SharePoint XLSX распоредите. Кога одговорот не е во базата, асистентот чесно признава „не знам“ наместо да измислува.
+    </p>
+  </div>
+</section>
+
+<!-- Install -->
+<section id="install" class="section section-light">
+  <div class="container">
+    <h2 data-mk="Како да го инсталирам?" data-en="How to install">Како да го инсталирам?</h2>
+    <p class="section-lede"
+       data-mk="Засега екстензијата се дистрибуира како .zip фајл (не е објавена на Chrome Web Store). Инсталацијата трае помалку од една минута."
+       data-en="For now the extension is distributed as a .zip file (not yet on the Chrome Web Store). Installation takes less than a minute.">
+      Засега екстензијата се дистрибуира како .zip фајл (не е објавена на Chrome Web Store). Инсталацијата трае помалку од една минута.
+    </p>
+
+    <ol class="install-steps">
+      <li class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3 data-mk="Преземи го .zip фајлот"
+              data-en="Download the .zip file">Преземи го .zip фајлот</h3>
+          <p data-mk="Кликни на копчето подолу. Ќе биде преземен фајлот finki-ai-assistant.zip (~250 KB)."
+             data-en="Click the button below. The file finki-ai-assistant.zip (~250 KB) will be downloaded.">
+            Кликни на копчето подолу. Ќе биде преземен фајлот <code>finki-ai-assistant.zip</code> (~250 KB).
+          </p>
+          <a class="btn btn-primary"
+             href="https://github.com/tanesoff/Diplomska-frontend/releases/latest"
+             data-mk="Преземи finki-ai-assistant.zip"
+             data-en="Download finki-ai-assistant.zip">Преземи finki-ai-assistant.zip</a>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3 data-mk="Распакувај го .zip фајлот"
+              data-en="Unzip the file">Распакувај го .zip фајлот</h3>
+          <p data-mk="Двоен клик на преземениот .zip ќе го распакува (или со десен клик → „Extract All“ на Windows / „Open With → Archive Utility“ на Mac). Ќе добиеш папка наречена finki-ai-assistant (или dist)."
+             data-en="Double-click the downloaded .zip to extract it (or right-click → 'Extract All' on Windows / 'Open With → Archive Utility' on Mac). You'll get a folder named finki-ai-assistant (or dist).">
+            Двоен клик на преземениот <code>.zip</code> ќе го распакува (или со десен клик → „Extract All“ на Windows / „Open With → Archive Utility“ на Mac). Ќе добиеш папка наречена <code>finki-ai-assistant</code> (или <code>dist</code>).
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3 data-mk="Отвори ја страницата за екстензии"
+              data-en="Open Chrome's extensions page">Отвори ја страницата за екстензии</h3>
+          <p data-mk="Во Chrome, во URL барот напиши:"
+             data-en="In Chrome, type in the URL bar:">
+            Во Chrome, во URL барот напиши:
+          </p>
+          <code class="code-block">chrome://extensions/</code>
+          <p data-mk="Или: иди во Chrome menu → More tools → Extensions."
+             data-en="Or: Chrome menu → More tools → Extensions.">
+            Или: иди во Chrome menu → More tools → Extensions.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3 data-mk="Вклучи „Developer mode“"
+              data-en="Enable 'Developer mode'">Вклучи „Developer mode“</h3>
+          <p data-mk="Во горниот десен агол на страницата за екстензии, вклучи го прекинувачот „Developer mode“. Ќе се појават три нови копчиња: „Load unpacked“, „Pack extension“ и „Update“."
+             data-en="In the top-right corner of the extensions page, toggle 'Developer mode' on. Three new buttons will appear: 'Load unpacked', 'Pack extension', and 'Update'.">
+            Во горниот десен агол на страницата за екстензии, вклучи го прекинувачот <strong>„Developer mode“</strong>. Ќе се појават три нови копчиња.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3 data-mk="Кликни „Load unpacked“ и избери ја папката"
+              data-en="Click 'Load unpacked' and select the folder">Кликни „Load unpacked“ и избери ја папката</h3>
+          <p data-mk="Кликни на копчето „Load unpacked“ и избери ја распакуваната папка од Чекор 2. Екстензијата веднаш ќе се појави во листата со екстензии."
+             data-en="Click 'Load unpacked' and select the folder you extracted in Step 2. The extension will immediately appear in your extensions list.">
+            Кликни на копчето <strong>„Load unpacked“</strong> и избери ја распакуваната папка од Чекор 2. Екстензијата веднаш ќе се појави во листата со екстензии.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h3 data-mk="Готово! Отвори finki.ukim.mk"
+              data-en="Done! Open finki.ukim.mk">Готово! Отвори finki.ukim.mk</h3>
+          <p data-mk="Посети било која страница на ФИНКИ. Во долниот десен агол ќе видиш сино копче со „ФИ“. Кликни го и почни да прашуваш."
+             data-en="Visit any FINKI page. In the bottom-right corner you'll see a blue button with 'ФИ'. Click it and start asking questions.">
+            Посети било која страница на ФИНКИ. Во долниот десен агол ќе видиш сино копче со „ФИ“. Кликни го и почни да прашуваш.
+          </p>
+          <a class="btn btn-secondary"
+             href="https://finki.ukim.mk/mk" target="_blank" rel="noopener noreferrer"
+             data-mk="Отвори finki.ukim.mk →"
+             data-en="Open finki.ukim.mk →">Отвори finki.ukim.mk →</a>
+        </div>
+      </li>
+    </ol>
+
+    <div class="install-screenshot">
+      <img src="img/button.png" alt="FI button visible in the bottom-right of finki.ukim.mk" />
+      <p class="caption"
+         data-mk="Пловечкото копче во долниот десен агол по успешна инсталација."
+         data-en="The floating button in the bottom-right corner after successful installation.">
+        Пловечкото копче во долниот десен агол по успешна инсталација.
+      </p>
+    </div>
+
+    <div class="warning"
+         data-mk="Напомена: екстензијата работи само на доменот finki.ukim.mk и неговите подомени. На други веб-страници нема да се појави — ова е намерно за приватност."
+         data-en="Note: the extension only works on finki.ukim.mk and its subdomains. It will not appear on any other website — this is intentional for privacy.">
+      <strong>Напомена:</strong> екстензијата работи само на доменот finki.ukim.mk и неговите подомени. На други веб-страници нема да се појави — ова е намерно за приватност.
+    </div>
+  </div>
+</section>
+
+<!-- Tech / Architecture -->
+<section id="tech" class="section">
+  <div class="container">
+    <h2 data-mk="Технологии и архитектура"
+        data-en="Tech stack and architecture">Технологии и архитектура</h2>
+
+    <div class="grid-2">
+      <div>
+        <p data-mk="Системот е изграден како клиент–сервер апликација со три логички слоеви:"
+           data-en="The system is built as a client–server application with three logical layers:">
+          Системот е изграден како клиент–сервер апликација со три логички слоеви:
+        </p>
+        <ul class="tech-list">
+          <li data-mk="Бекенд: ASP.NET Core .NET 9 хостиран на Azure App Service со Managed Identity"
+              data-en="Backend: ASP.NET Core .NET 9 hosted on Azure App Service with Managed Identity">
+            <strong>Бекенд:</strong> ASP.NET Core .NET 9 хостиран на Azure App Service со Managed Identity
+          </li>
+          <li data-mk="AI слој: Azure AI Foundry Assistants API со file_search над vector store"
+              data-en="AI layer: Azure AI Foundry Assistants API with file_search over a vector store">
+            <strong>AI слој:</strong> Azure AI Foundry Assistants API со file_search над vector store
+          </li>
+          <li data-mk="Фронт-енд: React 19 + TypeScript + Vite како Chrome Manifest V3 екстензија"
+              data-en="Frontend: React 19 + TypeScript + Vite as a Chrome Manifest V3 extension">
+            <strong>Фронт-енд:</strong> React 19 + TypeScript + Vite како Chrome Manifest V3 екстензија
+          </li>
+          <li data-mk="Scraping: HtmlAgilityPack за HTML, ClosedXML за SharePoint XLSX распореди"
+              data-en="Scraping: HtmlAgilityPack for HTML, ClosedXML for SharePoint XLSX schedules">
+            <strong>Scraping:</strong> HtmlAgilityPack за HTML, ClosedXML за SharePoint XLSX распореди
+          </li>
+          <li data-mk="Sync: content-hashed имиња на фајлови за инкрементална синхронизација"
+              data-en="Sync: content-hashed filenames for incremental synchronization">
+            <strong>Sync:</strong> content-hashed имиња на фајлови за инкрементална синхронизација
+          </li>
+        </ul>
+      </div>
+      <div class="card-image">
+        <img src="img/architecture.png" alt="System architecture diagram" />
+      </div>
+    </div>
+
+    <h3 data-mk="Изворен код" data-en="Source code">Изворен код</h3>
+    <div class="repo-links">
+      <a class="repo-card" href="https://github.com/tanesoff/Diplomska-backend" target="_blank" rel="noopener noreferrer">
+        <span class="repo-icon">⚙️</span>
+        <div>
+          <div class="repo-name">Diplomska-backend</div>
+          <div class="repo-desc"
+               data-mk="ASP.NET Core .NET 9 — API, scraper-и, Foundry интеграција"
+               data-en="ASP.NET Core .NET 9 — API, scrapers, Foundry integration">
+            ASP.NET Core .NET 9 — API, scraper-и, Foundry интеграција
+          </div>
+        </div>
+      </a>
+      <a class="repo-card" href="https://github.com/tanesoff/Diplomska-frontend" target="_blank" rel="noopener noreferrer">
+        <span class="repo-icon">🧩</span>
+        <div>
+          <div class="repo-name">Diplomska-frontend</div>
+          <div class="repo-desc"
+               data-mk="React 19 + TypeScript Chrome екстензија"
+               data-en="React 19 + TypeScript Chrome extension">
+            React 19 + TypeScript Chrome екстензија
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About thesis -->
+<section class="section section-light">
+  <div class="container">
+    <h2 data-mk="За проектот" data-en="About the project">За проектот</h2>
+    <p data-mk="Овој систем е изграден како дипломска работа на Факултетот за информатички науки и компјутерско инженерство (ФИНКИ) при Универзитетот „Св. Кирил и Методиј“ во Скопје. Целта на трудот е да се покаже како комбинацијата на современи јазични модели (LLM) со класични техники на веб-екстракција може да донесе конкретна корист во академска средина."
+       data-en="This system was built as a diploma thesis at the Faculty of Computer Science and Engineering (FINKI), Ss. Cyril and Methodius University in Skopje. The thesis demonstrates how combining modern language models (LLMs) with classic web-extraction techniques can deliver concrete value in an academic environment.">
+      Овој систем е изграден како дипломска работа на Факултетот за информатички науки и компјутерско инженерство (ФИНКИ) при Универзитетот „Св. Кирил и Методиј“ во Скопје. Целта на трудот е да се покаже како комбинацијата на современи јазични модели (LLM) со класични техники на веб-екстракција може да донесе конкретна корист во академска средина.
+    </p>
+    <p data-mk="Истражувачкиот дел вклучува евалуација со 30 прашања во две конфигурации (со и без RAG), споредба на латенција, анализа на трошоци и безбедносна проценка. Експериментите покажаа дека RAG системот одговара точно во 80% од случаите наспроти 13% за истиот модел без пристап до базата на знаење."
+       data-en="The research portion includes an evaluation with 30 questions across two configurations (with and without RAG), latency comparison, cost analysis, and security assessment. Experiments show the RAG system answers correctly 80% of the time, compared to 13% for the same model without access to the knowledge base.">
+      Истражувачкиот дел вклучува евалуација со 30 прашања во две конфигурации (со и без RAG), споредба на латенција, анализа на трошоци и безбедносна проценка. Експериментите покажаа дека RAG системот одговара точно во 80% од случаите наспроти 13% за истиот модел без пристап до базата на знаење.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">FINKI AI Assistant</div>
+      <div class="muted small"
+           data-mk="Дипломска работа • ФИНКИ • УКИМ"
+           data-en="Diploma thesis • FCSE • UKIM">
+        Дипломска работа • ФИНКИ • УКИМ
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/tanesoff/Diplomska-backend" target="_blank" rel="noopener noreferrer">Backend</a>
+      <a href="https://github.com/tanesoff/Diplomska-frontend" target="_blank" rel="noopener noreferrer">Frontend</a>
+      <a href="https://finki.ukim.mk/mk" target="_blank" rel="noopener noreferrer">finki.ukim.mk</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
